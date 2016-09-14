@@ -21,9 +21,11 @@
 
 
 #### mongodb操作
-````javascript
+````txt
 mongod --dbpath D:\mondodb\data\node  //设置数据库文件路径
-use node //选择数据库
+show dbs    显示已经存在的数据库
+use node    选择数据库
+exit        退出数据库
 db.yinguit1601.find({userid: "0001"}) // 集合中查找
 db.yinguit1601.insert({……}) // 集合中植入新数据
 ````
