@@ -20,6 +20,12 @@
 ### css基础 1周
 ### js 3周
 ### jquery 1周
+* jquery介绍、基础语法规则、基础选择器、事件绑定
+* 选择器扩展 + dom节点操作
+* 事件扩展+动画
+* 插件
+* http+ajax
+
 ### bootstrap 1周
 ### html5新特性api 1周
 ### ng 2周
