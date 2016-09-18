@@ -123,3 +123,38 @@ loadScript('the-rest.js',function(){
   })
 </script>
 ````
+#### 标识符解析的性能
+````javascript
+/*
+* 标识符解析是有代价的。在执行环境的作用域链中，一个标识符的位置越深，它的读写速度也就越慢。因此，函数中读写局部变量总是最快的，而读写全局变量通常是最慢的（优化js引擎在某些情况下能有所改善）。请记住，全局变量总是存在于执行环境作用域链的最末端，因此它也是最远的。
+* 所以，在没有优化js引擎的浏览器中，建议尽量使用局部变量。如果某个跨作用域的值在函数中被引用一次以上，那么就把它存储到局部变量中 For 如下
+*/
+function initUI(){
+  var bd = document.body,
+  links = document.getElementsByTagName('a'),
+  i = 0,
+  len = links.length;
+  while(i<len){
+    update( links[i++] );
+  }
+  document.getElementById('go-btn').onclick = function(){
+    start();
+  }
+  bd.className = 'active';
+}
+// document引用了三次，而且是全局对象，搜索该变量过程必须遍历整个作用域链，直到最后在全局变量对象中找到。减少性能影响：把全局变量的引用存储在一个局部变量中，然后使用这个局部变量代替全局变量。For
+function initUI(){
+  var doc = document,
+      bd = doc.body,
+      links = doc.getElementsByTagName('a'),
+      i = 0,
+      len = links.length;
+  while(i<len){
+    update( links[i++] );
+  }
+  doc.getElementById('go-btn').onclick = function(){
+    start();
+  }
+  bd.className = 'active';
+}
+````
