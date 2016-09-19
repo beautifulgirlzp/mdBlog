@@ -32,6 +32,8 @@ js脚本除了执行在JS格式的文件里，还可以出现在HTML的很多标
 ### CSRF攻击
 ### cookies攻击
 ````txt
+大多数浏览器限制Cookies最大为4kb
 Apache Http Server 400错误暴露HttpOnly Cookie
-Apache Http Server请求头信息超过LimitRequestFieldSize长度时，服务器返回400（Bad Request），并在返回信息中将出错的请求头内容输出（包含请求头里的 HttpOnly Cookie），攻击者可以利用这个缺陷获取HttpOnly Cookie
+Apache Http Server请求头信息超过LimitRequestFieldSize长度时，服务器返回400（Bad Request），并在返回信息中将出错的请求头内容输出（包含请求头里的 HttpOnly Cookie），
+攻击者可以利用这个缺陷获取HttpOnly Cookie
 ````
