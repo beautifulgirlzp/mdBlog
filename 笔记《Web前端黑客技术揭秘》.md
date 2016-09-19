@@ -7,7 +7,7 @@ get请求目地：
 攻击：
   http://www.foo.com/user.php?id=1 union select password,1,1 from users;
 ````
-### XSS攻击
+### XSS跨站脚本攻击
 ````javascript
 前端解析location参数
 <script>
