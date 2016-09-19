@@ -1,5 +1,5 @@
 ### Sql注入攻击
-````html
+````javascript
 http://www.foo.com/user.php?id=1
 get请求目地：
   select username,email,desc1 from users where id=1;
