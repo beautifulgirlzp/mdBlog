@@ -168,3 +168,20 @@ function initUI(){
 6、浏览器的调用栈大小限制了递归算法在JavaScript中的应用，栈溢出错误会导致其他代码中断
 7、如果你遇到栈溢出错误，可将方法改为迭代算法，或使用Memoization来避免重复运算。
 ````
+#### Beancons 这项技术类似动态脚本注入，常用于统计代码发送统计信息
+````javascript
+var url = 'api/status.php';
+var params = ['step=2','time=12345678'];
+var beacon = new Image();
+beacon.src = url + '?' + params.join('&');
+beacon.onload = function(){
+  if(this.width == 1){
+    //假设返回的图片width==1代表成功
+  }else if(this.width == 2){
+    //失败
+  }
+}
+beacon.onerror = function(){
+  // 出错，稍候重试并创建另一个信标
+}
+````
