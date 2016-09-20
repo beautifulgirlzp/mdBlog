@@ -32,4 +32,14 @@ function xhrRequest(url, cb){
   req.send(null);
 }
 ````
+### 避免双重求值
+`当你在js代码中执行另一段js代码时，会导致双重求值的性能消耗`
+````javascript
+var num1 = 5,
+    num2 = 6,
+    result = eval("num1 + num2"),
+    sum = new Function("arg1","arg2","return arg1+arg2");
+    setTimeout("sum = num1 + num2",1000);
+````
+`以上代码会先以正常方式求值，然后在执行过程中对包含于字符串中的代码发起另一个求值运算。`
 
