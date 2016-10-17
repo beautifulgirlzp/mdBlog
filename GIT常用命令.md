@@ -74,3 +74,9 @@ git reset –-hard origin/master
 git reset 057d  
 6.回退到上一次提交的状态，按照某一次的commit完全反向的进行一次commit  
 git revert HEAD  
+
+<table>
+  <tr>
+    <td>表格</td>
+  </tr>
+</table>
